@@ -48,8 +48,9 @@ body{
     color:white;
 }
 
-.social_header{
-    
+.left_nav a:hover{
+    color:#C0C0C0;
+    border-radius:20px;
 }
 
 .left_social{
@@ -60,6 +61,7 @@ body{
 .left_social a{
     padding:5px;
 }
+
 
 
 .login{
