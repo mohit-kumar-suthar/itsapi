@@ -7,7 +7,7 @@
 body{
     background-image: url("body.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-size: cover;
     padding:0;
     margin:0;
@@ -16,7 +16,7 @@ body{
 
 
 .main_header{
-    margin: 20px 0 20px 0;
+    margin: 10px 0 20px 0;
     display: flex;
 
 }
@@ -56,31 +56,51 @@ body{
 .left_social{
     
     text-align:right;
-    padding:5px;
+    margin-top:5px;
 }
 .left_social a{
     padding:5px;
+    color:white;
 }
 
-
-
-.login{
-    padding:20px;
-    width:350px;
-    margin-top:70px;
-    background-color: rgba(255, 255, 255, 0.5);
+.account{
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius:20px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    color:white;
+    border: 1px solid #f1f1f17a;
 }
 
-.login input{
+hr{
+    background-color:white;
+}
+
+.account a{
+    text-decoration:none;
+}
+
+
+.register{
+    margin-top:60px;
+    padding:20px;
+    width:350px;
+}
+
+.login{
+    margin-top:120px;
+    padding:20px;
+    width:350px;
+}
+
+.account input{
     border-radius: 20px;
-    border:solid 1px #1266F1;
 }
 
-.login a{
-    text-decoration: none;
+.account textarea{
+    border-radius: 20px;
 }
+
+
 
 .main_footer{
     text-align:center;
@@ -88,9 +108,31 @@ body{
     bottom:0;
     width:100%;
     padding:5px;
+    color:white;
 }
 
 .main_footer a{
     text-decoration:none;
+}
+
+.account_btn a{
+    text-align: right;
+    margin-left:80px;
+    margin-top:7px;
+}
+
+
+.about{
+    margin-top:70px;
+}
+
+.profile{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius:20px;
+    border-right: 1px solid #f1f1f17a;
+}
+
+.contact{
+    padding: 20px;
 }
 
