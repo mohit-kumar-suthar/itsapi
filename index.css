@@ -64,7 +64,6 @@ body{
 }
 
 .account{
-    background-color: rgba(0, 0, 0, 0.7);
     border-radius:20px;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     color:white;
@@ -84,12 +83,14 @@ hr{
     margin-top:60px;
     padding:20px;
     width:350px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .login{
     margin-top:120px;
     padding:20px;
     width:350px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .account input{
@@ -117,22 +118,73 @@ hr{
 
 .account_btn a{
     text-align: right;
-    margin-left:80px;
+    margin-left:90px;
     margin-top:7px;
 }
 
 
 .about{
-    margin-top:70px;
-}
-
-.profile{
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius:20px;
-    border-right: 1px solid #f1f1f17a;
+    margin-top:90px;
+    border:none;
+    
 }
 
 .contact{
-    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    width:350px;
+    margin:auto;
+    border: 1px solid #f1f1f17a;
+    padding:10px;
+    border-radius:20px;
+    height:418px;
+    margin-bottom: 50px;
+}
+
+.profile{
+    text-align:center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width:350px;
+    margin:auto;
+    padding:10px;
+    border-radius:20px;
+    border: 1px solid #f1f1f17a;
+    height: 418px;
+    margin-bottom: 50px;
+}
+
+.circle{
+    border: 1px solid #f1f1f17a;
+    background-color:black;
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    margin:auto;
+}
+
+.otp{
+    text-align:center;
+}
+
+.otp h1{
+    font-size:60px;
+}
+
+.otp_text{
+    display:flex;
+}
+
+.otp_text span{
+    font-size:30px;
+}
+
+.otp_text input{
+    margin:5px;
+    width:50px;
+    height:50px;
+    border-radius: 40px;
+    margin:auto;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0,0);
+    color:white;
 }
 
