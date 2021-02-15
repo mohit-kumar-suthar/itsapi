@@ -9,30 +9,6 @@
     <title>Its Api</title>
 </head>
 <body>
-    <script>
-        function startTimer(duration, display) {
-            var timer = duration, minutes, seconds;
-            setInterval(function () {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
-        
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
-        
-                display.textContent = minutes + ":" + seconds;
-        
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
-        }
-        
-        window.onload = function () {
-            var fiveMinutes = 21,
-                display = document.querySelector('#time');
-            startTimer(fiveMinutes, display);
-        };
-    </script>
     <header>
         <div class="social_header">
             <div class="left_social">
@@ -68,7 +44,8 @@
             <form>
                 <div class="otp">
                     <p>- One Time Password -</p><hr>
-                    <h1 id="time">00:00</h1>
+                    <h1 id="count">00:00</h1>
+                    <progress value="0" max="30" id="progressBar"></progress>
                 </div><hr>
                 <div class="form-group">
                     <div class="otp_text">
@@ -78,13 +55,11 @@
                     <span>-</span>
                     <input type="text" class="form-control">
                     <span>-</span>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" >
                     </div><hr>
                 </div>
-                <div class="account_btn">
                     <input type="button" value="Confirm" class="btn btn-warning">
-                    <a href="#">Send Again</a>
-                </div>
+                    <input type="button" value="Send Again" class="btn btn-secondary" id="btn-Send" disabled>
             </form>   
         </div>
     </main>
@@ -94,5 +69,28 @@
             <a href="#"> Mohit Suthar</a>
         </div>
     </footer>
+    <script type="text/javascript">
+
+        if(sessionStorage.getItem("counter")){
+           var timeleft = sessionStorage.getItem("counter")
+        }
+        else{
+          var timeleft = 30;
+        }
+        timesec = timeleft < 10 ? '0' + timeleft : timeleft;
+        document.getElementById("count").innerHTML = "00:"+timesec;
+        document.getElementById("progressBar").value = 30-timesec;
+         var timer = setInterval(function(){
+           if(timeleft<=0){
+             clearInterval(timer);
+             document.getElementById("btn-Send").disabled = false;
+           }
+           timesec = timeleft < 10 ? '0' + timeleft : timeleft;
+           document.getElementById("count").innerHTML = "00:"+timesec;
+           document.getElementById("progressBar").value = 30-timesec;
+           sessionStorage.setItem('counter',timeleft);
+           timeleft = parseInt(timeleft) - 1;
+         },1000);
+       </script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h1 id = "count">00:00</h1>
+  <progress value="0" max="30" id="progressBar"></progress>
+  <button id="myBtn" disabled>Hello</button>
+  <script type="text/javascript">
+
+   if(sessionStorage.getItem("counter")){
+      var timeleft = sessionStorage.getItem("counter")
+   }
+   else{
+     var timeleft = 30;
+   }
+   timesec = timeleft < 10 ? '0' + timeleft : timeleft;
+   document.getElementById("count").innerHTML = "00:"+timesec;
+   document.getElementById("progressBar").value = 30-timesec;
+    var timer = setInterval(function(){
+      if(timeleft<=0){
+        clearInterval(timer);
+        document.getElementById("myBtn").disabled = false;
+      }
+      timesec = timeleft < 10 ? '0' + timeleft : timeleft;
+      document.getElementById("count").innerHTML = "00:"+timesec;
+      document.getElementById("progressBar").value = 30-timesec;
+      sessionStorage.setItem('counter',timeleft);
+      timeleft = parseInt(timeleft) - 1;
+    },1000);
+  </script>
+</body>
+</html>
