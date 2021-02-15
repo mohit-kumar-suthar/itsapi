@@ -59,7 +59,7 @@
                     </div><hr>
                 </div>
                     <input type="button" value="Confirm" class="btn btn-warning">
-                    <input type="button" value="Send Again" class="btn btn-secondary" id="btn-Send" disabled>
+                    <input type="button" value="Please wait..." class="btn btn-secondary" id="btn-Send" disabled>
             </form>   
         </div>
     </main>
@@ -82,13 +82,17 @@
         document.getElementById("progressBar").value = 30-timesec;
          var timer = setInterval(function(){
            if(timeleft<=0){
+             sessionStorage.removeItem('counter');
              clearInterval(timer);
              document.getElementById("btn-Send").disabled = false;
+             document.getElementById("btn-Send").value = 'Send again';
+           }
+           else{
+            sessionStorage.setItem('counter',timeleft);
            }
            timesec = timeleft < 10 ? '0' + timeleft : timeleft;
            document.getElementById("count").innerHTML = "00:"+timesec;
            document.getElementById("progressBar").value = 30-timesec;
-           sessionStorage.setItem('counter',timeleft);
            timeleft = parseInt(timeleft) - 1;
          },1000);
        </script>
